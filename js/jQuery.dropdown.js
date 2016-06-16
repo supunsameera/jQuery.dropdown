@@ -2,7 +2,8 @@
     $.fn.dropDownList = function(options) {
     		var defaults={
 			textColor:'#cecece',
-			disabledBorder:'none'
+			disabledBorder:'1px solid #c8c8c8',
+			triangleIconClass:'triangle-bottom'
 		},
 		options=$.extend(defaults,options);
 
@@ -27,17 +28,24 @@
                 if(option.disabled){
                 	isoptiondisabled='isoptiondisabled';
                 }
-                if($dropdownSelect.prop('disabled')==true){
-                	isselectdisabled='isselectdisabled';
-                	$dropdownSelect.parent('.dropdownWrapper').css({
-                		'border':options.disabledBorder
-                	});
-                }
+               
                 dropdownItems += '<li class="dropDownListItemli' +isoptiondisabled  +'">' + option.text + '</li>';
 
             });
-            dropDownContent = '<a class="dropDownTitle"><span class="dropDownTitleText">' + dropdownTitle + '</span><span class="glyphicon glyphicon-triangle-bottom"></span></a><ul class="dropdownItemsWrapperul '+isselectdisabled+'">' + dropdownItems + '</ul>';
+            dropDownContent = '<a class="dropDownTitle"><span class="dropDownTitleText">' + dropdownTitle + '</span><span class="'+options.triangleIconClass+'"></span></a><ul class="dropdownItemsWrapperul '+isselectdisabled+'">' + dropdownItems + '</ul>';
             $dropdownWrapper.append(dropDownContent);
+
+             if($dropdownSelect.prop('disabled')==true){
+                	isselectdisabled='isselectdisabled';
+                	$dropdownWrapper.addClass('isselectdisabled');
+
+                	$dropdownWrapper.find('.dropDownTitle').css({
+                		'border':options.disabledBorder
+                	});
+                	
+                }
+
+
 
 
 
