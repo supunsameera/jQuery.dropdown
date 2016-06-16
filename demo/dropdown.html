@@ -6,38 +6,36 @@
 <link rel="stylesheet" href="dropdown.styles.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
  <script src="../js/jQuery.dropdown.js"></script>
-<style>
-	
 
-
-</style>
 </head>
 <body>
 	
 
 
-
-<select disabled name="gender" id="myDropdown2" class="myDropdown2">
-		<option selected value="male">Maldfgdfge</option>
-		<option value="female">Femaldhgdhfghe</option>
-		<option value="nutral">Neutdhdfgdfgral</option>
+<label for="country">Disabled Dropdown</label>
+<select disabled name="country" id="country">
+		<option selected value="sri lanka">Sri Lanka</option>
+		<option value="philippines">Philippines</option>
+		<option value="singapore">Singapore</option>
 </select>
-<select name="gednder" id="myDropdowdn2" class="myDropdownd2">
-		<option selected value="malsdfge">Mafge</option>
-		<option value="fedfgdfgmale">Femhe</option>
-		<option value="nutdfgdfgral">Nefgdfgral</option>
+<hr>
+<label for="province">Select Province</label>
+<select name="province" class="province">
+		<option selected value="western">Western</option>
+		<option value="eastern">Eastern</option>
+		<option value="southern">Southern</option>
+		<option value="northen">Northen</option>
+		<option value="central">Central</option>
 	</select>
-<select name="geddsgfgnder" id="dsfgfg" class="drop">
-		<option selected value="malsdfge">Maddddddddddddddddfge</option>
-		<option value="fedfgdfgmale">Femddddddddddddddddhe</option>
-		<option value="nutdfgdfgral">Nefgddddddddddddfgral</option>
-	</select>
+
 
 	<script>
 		$(function(){
-			$('#myDropdown2').dropDownList();
-			$('#myDropdowdn2').dropDownList();
-			$('.drop').dropDownList();
+			$('#country').dropDownList({
+				disabledBorder:'1px solid red'
+			});
+			$('.province').dropDownList();
+
 		});
 	</script>
 </body>
