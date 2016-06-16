@@ -1,7 +1,8 @@
 (function($) {
     $.fn.dropDownList = function(options) {
-    		var defaults={
-			textColor:'#cecece',
+    	var defaults={
+			textColor:'#000',
+			disabledTxtColor:'#ccc',
 			disabledBorder:'1px solid #c8c8c8',
 			triangleIconClass:'triangle-bottom'
 		},
@@ -33,14 +34,18 @@
 
             });
             dropDownContent = '<a class="dropDownTitle"><span class="dropDownTitleText">' + dropdownTitle + '</span><span class="'+options.triangleIconClass+'"></span></a><ul class="dropdownItemsWrapperul '+isselectdisabled+'">' + dropdownItems + '</ul>';
-            $dropdownWrapper.append(dropDownContent);
+            $dropdownWrapper.append(dropDownContent).css({
+                		'color':options.textColor
+                	});
+                	
 
              if($dropdownSelect.prop('disabled')==true){
                 	isselectdisabled='isselectdisabled';
                 	$dropdownWrapper.addClass('isselectdisabled');
 
                 	$dropdownWrapper.find('.dropDownTitle').css({
-                		'border':options.disabledBorder
+                		'border':options.disabledBorder,
+                		'color':options.disabledTxtColor
                 	});
                 	
                 }
