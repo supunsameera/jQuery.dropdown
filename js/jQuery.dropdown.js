@@ -1,8 +1,8 @@
 (function($) {
-    $.fn.dropDownList = function() {
+    $.fn.dropDownList = function(options) {
     		var defaults={
 			textColor:'#cecece',
-			disabledBorder:'1px solid red'
+			disabledBorder:'none'
 		},
 		options=$.extend(defaults,options);
 
@@ -42,7 +42,7 @@
 
 
             $dropdownWrapper.on('click', '.dropDownTitle', function(e) {
-                if (!$dropdownWrapper.hasClass('isoptiondisabled')) {
+                if (!$dropdownWrapper.hasClass('isselectdisabled')) {
 
                     $dropdownWrapper.find('.active').removeClass('active');
 
@@ -66,7 +66,7 @@
 
 
             $dropdownWrapper.on('click', '.dropDownListItemli', function() {
-                if (!$dropdownWrapper.hasClass('isoptiondisabled')) {
+                if (!$dropdownWrapper.hasClass('isselectdisabled')) {
 
                     $(this).siblings('.dropDownListItemli').removeClass('isselected');
                     $(this).addClass('isselected');
