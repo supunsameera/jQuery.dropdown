@@ -42,12 +42,25 @@ And the styles will be same with any browser.
   - data type: 'string'
   - default value: '#cecece'
   - possible value: 'any value for text color'
+  
 
+#### disabledTxtColor
+  - description: when dropdown disabled set txt color
+  - data type: 'string'
+  - default value: '#ccc'
+  - possible value: 'any value for color'
+ 
 #### disabledBorder
   - description: when dropdown disabled set border
   - data type: 'string'
-  - default value: none
+  - default value: '1px solid #c8c8c8'
   - possible value: 'any value for border'
+
+#### triangleIconClass
+  - description: you can change traingle icon by adding some class with triangle
+  - data type: 'string'
+  - default value: 'triangle-bottom'
+  - possible value: 'any class you defined'
 
 
 
