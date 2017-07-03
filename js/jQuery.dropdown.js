@@ -61,7 +61,7 @@
 
                     e.stopPropagation();
                     var dropdownWidth = $(this).parents(".dropdownWrapper").width();
-                    $(this).next(".dropdownItemsWrapperul").css('width', dropdownWidth + 'px');
+                    //$(this).next(".dropdownItemsWrapperul").css('width', dropdownWidth + 'px');
 
                     $dropdownWrapper.toggleClass('active');
                     $('.dropdownWrapper').each(function() {
@@ -83,7 +83,7 @@
 
                     $(this).siblings('.dropDownListItemli').removeClass('isselected');
                     $(this).addClass('isselected');
-                    $(this).parents().siblings('.dropDownTitle').html($(this).text());
+                    $(this).parents().siblings('.dropDownTitle').html('<span class="dropDownTitleText">'+$(this).text()+'</span><span class="triangle-bottom"></span>');
 
                     var selectedItemText = $(this).text();
                     $dropdownSelect.find("option").each(function(key, value) {
